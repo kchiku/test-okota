@@ -1,0 +1,27 @@
+@charset "utf-8";
+@use '../global/__index' as var;
+
+body,html{
+    background-color: #F4F6F6;
+}
+
+
+.l-section{
+    margin: 0 auto;
+    padding:120px 0 120px;
+    width: 100%;
+    max-width: var.$container-size-pc;
+}
+
+@media screen and (min-width: var.$container-size-sp) {}
+
+@media screen and (min-width: var.$container-size-tab) {}
+
+@media screen and (min-width: var.$container-size-tab-wide) {
+    .l-section{
+        padding:180px 0 180px;
+    }
+}
+
+@media screen and (min-width: var.$container-size-pc) {
+}

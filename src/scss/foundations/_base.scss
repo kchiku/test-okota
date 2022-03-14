@@ -1,0 +1,79 @@
+@charset "utf-8";
+@use '../global/__index' as var;
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    &.open {
+        overflow: hidden;
+    }
+}
+
+* {
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style-type: none;
+}
+
+dl,
+dt,
+dd {
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    margin: 0;
+}
+
+img {
+    display: block;
+}
+
+
+.pc {
+    display: none;
+}
+.sp {
+    display: block;
+}
+//PC($content-size)以上
+@media screen and (min-width: var.$container-size-pc) {}
+
+//タブレット〜PC($content-size)
+@media screen and (min-width: var.$container-size-tab) {
+    body {}
+}
+
+//スマホ以下
+@media screen and (min-width: var.$container-size-sp) {
+.pc {
+    display: block;
+}
+
+.sp {
+    display: none;
+}
+}

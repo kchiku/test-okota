@@ -1,0 +1,183 @@
+@charset "utf-8";
+@use '_variable';
+//アニメーション
+// ■ アニメーション記述例
+//------------------------------------------
+//@include keyframes(animationSample){
+//    0% {
+//       opacity:0;
+//    }
+//    100% {
+//        opacity:1;
+//    }
+//}
+//#hoge{
+//    @include animation(animationSample 1.2s ease 0.15s);
+//}
+//------------------------------------------
+@mixin keyframes($animation-name: animation) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+
+@mixin animation($animation-name) {
+    -webkit-animation: $animation-name;
+    -moz-animation: $animation-name;
+    animation: $animation-name;
+    -webkit-animation-fill-mode: both;
+    -moz-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+//グラデーション
+//@include gradient(#fff,#000,ver) --上（白）から下（黒）へ
+@mixin gradient($color1, $color2, $direction: ver) {
+    background-color: $color1; // Old browsers
+    @if $direction==ver {
+        background: -moz-linear-gradient(left, $color1 0%, $color2 100%);
+        /* FF3.6-15 */
+        background: -webkit-linear-gradient(left, $color1 0%, $color2 100%);
+        /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to right, $color1 0%, $color2 100%);
+        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        //filter: progid: DXImageTransform.Microsoft.gradient( startColorstr=$color1, endColorstr=$color2, GradientType=1);
+        /* IE6-9 */
+    }
+    @else if $direction==hor {
+        background: -moz-linear-gradient(top, $color1 0%, $color2 100%);
+        /* FF3.6-15 */
+        background: -webkit-linear-gradient(top, $color1 0%, $color2 100%);
+        /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom, $color1 0%, $color2 100%);
+        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        //filter: progid: DXImageTransform.Microsoft.gradient( startColorstr=$color1, endColorstr=$color2, GradientType=0);
+        /* IE6-9 */
+    }
+    @else if $direction==lefttop {
+        background: -moz-linear-gradient(-45deg, $color1 0%, $color2 100%);
+        /* FF3.6-15 */
+        background: -webkit-linear-gradient(-45deg, #1d0721 0%, $color2 100%);
+        /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(135deg, $color1 0%, #9a51a8 100%);
+        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        //filter: progid: DXImageTransform.Microsoft.gradient( startColorstr=$color1, endColorstr=$color2, GradientType=1);
+        /* IE6-9 fallback on horizontal gradient */
+    }
+    @else if $direction==leftbottom {
+        background: -moz-linear-gradient(45deg, $color1 0%, $color2 100%);
+        /* FF3.6-15 */
+        background: -webkit-linear-gradient(45deg, $color1 0%, $color2 100%);
+        /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(45deg, $color1 0%, $color2 100%);
+        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        //filter: progid: DXImageTransform.Microsoft.gradient( startColorstr=$color1, endColorstr=$color2, GradientType=1);
+        /* IE6-9 fallback on horizontal gradient */
+    }
+}
+
+//グラデーション
+//@include gradient(#f00,#0f0,#00f,hor) --左（赤）から中央（緑）から右（青）へ
+@mixin gradient2($color1, $color2, $color3, $direction: ver) {
+    background-color: $color1; // Old browsers
+    @if $direction==ver {
+        background: -moz-linear-gradient(left, $color1 0%, $color2 50%, $color3 100%);
+        /* FF3.6-15 */
+        background: -webkit-linear-gradient(left, $color1 0%, $color2 50%, $color3 100%);
+        /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to right, $color1 0%, $color2 50%, $color3 100%);
+        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        //filter: progid: DXImageTransform.Microsoft.gradient( startColorstr=$color1, endColorstr=$color3, GradientType=1);
+        /* IE6-9 */
+    }
+    @else if $direction==hor {
+        background: -moz-linear-gradient(top, $color1 0%, $color2 50%, $color3 100%);
+        /* FF3.6-15 */
+        background: -webkit-linear-gradient(top, $color1 0%, $color2 50%, $color3 100%);
+        /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(to bottom, $color1 0%, $color2 50%, $color3 100%);
+        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        //filter: progid: DXImageTransform.Microsoft.gradient( startColorstr=$color1, endColorstr=$color3, GradientType=0);
+        /* IE6-9 */
+    }
+    @else if $direction==lefttop {
+        background: -moz-linear-gradient(-45deg, $color1 0%, $color2 50%, $color3 100%);
+        /* FF3.6-15 */
+        background: -webkit-linear-gradient(-45deg, $color1 0%, $color2 50%, $color3 100%);
+        /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(135deg, $color1 0%, $color2 50%, $color3 100%);
+        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        //filter: progid: DXImageTransform.Microsoft.gradient( startColorstr=$color1, endColorstr=$color3, GradientType=1);
+        /* IE6-9 fallback on horizontal gradient */
+    }
+    @else if $direction==leftbottom {
+        background: -moz-linear-gradient(45deg, $color1 0%, $color2 50%, $color3 100%);
+        /* FF3.6-15 */
+        background: -webkit-linear-gradient(45deg, $color1 0%, $color2 50%, $color3 100%);
+        /* Chrome10-25,Safari5.1-6 */
+        background: linear-gradient(45deg, $color1 0%, $color2 50%, $color3 100%);
+        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        //filter: progid: DXImageTransform.Microsoft.gradient( startColorstr=$color1, endColorstr=$color3, GradientType=1);
+        /* IE6-9 fallback on horizontal gradient */
+    }
+}
+
+//背景斜めストライプ
+@mixin stripe($color) {
+    background: -webkit-linear-gradient(bottom right, transparent 30%, rgba($color, 0.5) 30%, rgba($color, 0.5) 50%, transparent 50%, transparent 80%, rgba($color, 0.5) 80%, rgba($color, 0.5));
+    background: -o-linear-gradient(bottom right, transparent 30%, rgba($color, 0.5) 30%, rgba($color, 0.5) 50%, transparent 50%, transparent 80%, rgba($color, 0.5) 80%, rgba($color, 0.5));
+    background: linear-gradient(to bottom right, transparent 30%, rgba($color, 0.5) 30%, rgba($color, 0.5) 50%, transparent 50%, transparent 80%, rgba($color, 0.5) 80%, rgba($color, 0.5));
+    background-size: 10px 10px;
+}
+
+//before・after疑似要素
+@mixin coverElement {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+}
+
+//ホバー透過
+@mixin hoverOpacity {
+    transition: 0.3s ease;
+    &:hover {
+        opacity: 0.6;
+    }
+}
+
+//ホバー拡大
+@mixin hoverScale {
+    transition: 0.3s ease;
+    &:hover {
+        transform: scale(110%);
+    }
+}
+
+//ホバースライド
+@mixin slideback {
+    &::before {
+        @include coverElement;
+        top: 50px;
+        left: 0;
+        @include transition(0.2s);
+        z-index: 0;
+    }
+}
+
+//ふわっとトランジション
+@mixin fuwa() {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 1s;
+    &.on {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

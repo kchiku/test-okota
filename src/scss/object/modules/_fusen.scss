@@ -1,0 +1,84 @@
+@charset "utf-8";
+@use '../../global/__index' as var;
+
+@keyframes fade{
+    0% {
+      opacity: 0;
+      transform: rotateX(-30deg) rotateY(-50deg) translate3d(-20px, -20px, 200px) scale(1.2);
+    }
+  
+    100% {
+      opacity: 1;
+      transform: rotateX(0deg) rotateY(0deg) translate3d(0px, 0px, 0px) scale(1);
+
+    }
+}
+
+.m-fusen{
+    padding: 0 15px;
+    & ul{
+        display: flex;
+        flex-direction: column;
+        & li{
+            position: relative;
+            padding: 20px;
+            margin: 0 0 40px;
+            border-width: 1px;
+            border-style: solid;
+            border-color: #ccc;
+        }
+    }
+
+    &_item{
+        opacity: 0;
+        &.on{ 
+            animation: fade 1.2s ease forwards;
+         }
+    }
+
+    &_button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 150px;
+        height: 50px;
+        font-size: 16px;
+        color: #fff;
+        background-color: var.$colorBase;
+        cursor: pointer;
+        border-radius: 3px;
+        @include var.hoverOpacity();
+    }
+}
+
+
+@media screen and (min-width: var.$container-size-sp) {
+
+.m-fusen{
+
+}
+
+}
+
+@media screen and (min-width: var.$container-size-tab) {
+
+.m-fusen{
+    & ul{
+        flex-direction: row;
+        justify-content: space-between;
+        & li{
+
+            width: 32%;
+        }
+    }
+}
+
+}
+    
+@media screen and (min-width: var.$container-size-pc) {
+
+.m-fusen{
+
+}
+
+}

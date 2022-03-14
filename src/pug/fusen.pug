@@ -1,0 +1,23 @@
+extends _layout
+block title
+  title テストページ
+
+block desc
+  meta(name="description", content="ディスクリプション")
+
+block content 
+    section.l-section
+        .m-fusen 
+            ul 
+                li 
+                    .m-fusen_item.js-fusen-item 
+                        img(src="img/fusen-01.png", alt="付箋１")
+                    .m-fusen_button.js-fusen-button 付箋を貼る 
+                li 
+                    .m-fusen_item.js-fusen-item 
+                        img(src="img/fusen-02.png", alt="付箋２")
+                    .m-fusen_button.js-fusen-button 付箋を貼る 
+                li 
+                    .m-fusen_item.js-fusen-item 
+                        img(src="img/fusen-03.png", alt="付箋３")
+                    .m-fusen_button.js-fusen-button 付箋を貼る 

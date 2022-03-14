@@ -1,0 +1,69 @@
+@charset "utf-8";
+
+//ブレイクポイント-------------------------------------------------------
+$container-size-pc : 1100px;
+$container-size-tab-wide : 1024px;
+$container-size-tab : 768px;
+$container-size-sp : 420px;
+
+
+//コンテンツサイズ-------------------------------------------------------
+$content-size: $container-size-pc;
+
+
+//カラー-------------------------------------------------------------
+
+//content
+$colorBase: #5FB1DE;
+$colorBase-b: #0F5077;
+$colorBase-c: #217CB4;
+$colorBase-d: #C0DAEA;
+
+$colorGray: #393939;
+$colorGray-b: #999999;
+$colorGray-c: #858585;
+$colorGray-d: #F5F5F5;
+$colorGray-e: #D6D6D6;
+
+$line: #EBEBEB;
+
+$colorLightGray: #DDDDDD;
+$colorRed: #E24B4B;
+$colorBlue: #042060;
+$colorYellow: #EBC100;
+$colorPink: #D6655F;
+$colorGreen: #71BA42;
+$colorBlue-l: #2C83AF;
+
+//font
+$colorFont: #4D4D4D; //フォントベーシックカラー
+
+/*
+#colors
+
+@colorBase #8c527e
+@colorSub #f00
+@colorFont #666
+*/
+
+
+
+//ボタン
+$colorButton: #ffa131; //ボタンカラー
+
+//sns
+$colorFb: #3a5a98; //facebook
+$colorTw: #1da1f2; //twitter
+$colorLine: #00b900; //line
+$colorFe: #2bb24c; //feedly
+$colorHatena: #00a4de; //hatena
+
+/*
+#colors
+
+@colorFb #3a5a98
+@colorTw #1da1f2
+@colorLine #00b900
+@colorFe #2bb24c
+@colorHatena #00a4de
+*/

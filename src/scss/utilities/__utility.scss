@@ -1,0 +1,8 @@
+@charset "utf-8";
+@use '../global/__index' as var;
+
+@for $i from 1 through 20 {
+    .mgt#{$i*10} {
+        margin-top: #{$i*10}px !important
+    }
+}

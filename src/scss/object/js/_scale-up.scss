@@ -1,0 +1,58 @@
+@charset "utf-8";
+
+.js-scale-up{
+    transition: 0.3s;
+    transform: scale(0.9) translate(0,100px);
+    opacity: 0;
+
+    &.show{
+        transform: scale(1) translate(0, 0);
+        opacity: 1;
+    }
+}
+
+.js-scale-up2{
+    transition: 0.3s;
+    transform: scale(0.9) translate(0,100px);
+    opacity: 0;
+
+    &.show{
+        transform: scale(1) translate(0, 0);
+        opacity: 1;
+    }
+}
+
+.js-scale-up3{
+    transition: 0.3s;
+    transform: scale(0.9) translate(0,100px);
+    opacity: 0;
+
+    &.show{
+        transform: scale(1) translate(0, 0);
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: $container-size-pc) {
+
+.js-scale-up{
+
+}
+
+}
+
+@media screen and (max-width: $container-size-tab) {
+
+.js-scale-up{
+
+}
+
+}
+
+@media screen and (max-width: $container-size-sp) {
+
+.js-scale-up{
+
+}
+
+}

@@ -1,0 +1,35 @@
+@charset "utf-8";
+
+.js-news{
+
+    &-wrap{
+        height: 20px;
+        position: relative;
+        overflow: hidden;
+        opacity: 0;
+        transition: 0.3s ease;
+        &.show{
+            opacity: 1;
+        }
+    }
+
+    &-list{
+        position: absolute;
+        display: flex;
+        align-items: center;
+        top: 0;
+        left: 0;
+        &::after{
+            content: "."; 
+            display: block; 
+            height: 0; 
+            font-size:0;	
+            clear: both; 
+            visibility:hidden;
+        }
+    }
+
+    &-item{
+        float: left;
+    }
+}

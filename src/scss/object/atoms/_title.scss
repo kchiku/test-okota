@@ -1,0 +1,84 @@
+@charset "utf-8";
+@use '../../global/__index' as var;
+
+.a-title{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 0 10px;
+    padding: 0 0 30px;
+    color: #333;
+    &::after{
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 68px;
+        height: 2px;
+        background-color: var.$colorBase;
+        transform: translate(-50%, 0);
+    }
+
+    & span{
+        flex: 0 0 auto;
+        margin: 0 0 15px;
+        font-size: 32px;
+        font-weight: 900;
+        line-height: 1;
+    }
+
+    & small{
+        flex: 0 0 auto;
+        font-size: 11px;
+        font-weight: 400;
+        line-height: 1;
+    }
+}
+
+
+@media screen and (min-width: var.$container-size-sp) {
+
+.a-title{
+
+}
+
+}
+
+@media screen and (min-width: var.$container-size-tab) {
+
+.a-title{
+
+}
+
+}
+
+@media screen and (min-width: var.$container-size-tab-wide) {
+
+
+    .a-title{
+        margin: 0 0 20px;
+        padding: 0 0 48px;
+        &::after{
+            width: 74px;
+            height: 2px;
+        }
+
+        & span{
+            margin: 0 0 22px;
+            font-size: 40px;
+        }
+
+        & small{
+            font-size: 13px;
+        }
+    }
+}
+    
+@media screen and (min-width: var.$container-size-pc) {
+
+.a-title{
+
+}
+
+}
